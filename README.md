@@ -5,7 +5,7 @@ A Vue.js plugin that adds a "v-tw-merge" directive that you can use in your comp
 To achieve the tailwind class merging behavior this package uses [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) under the hood.
 
 ## Example
-```ts
+```vue
 // ParentComponent.vue
 <div>
 	...
@@ -14,7 +14,7 @@ To achieve the tailwind class merging behavior this package uses [tailwind-merge
 </div>
 ```
 
-```ts
+```vue
 // ChildComponent.vue
 <div class="text-2xl text-red-500">
 	Lorem ipsum dolor sit amet consectetur adipisicing elit
@@ -22,7 +22,7 @@ To achieve the tailwind class merging behavior this package uses [tailwind-merge
 ```
 
 ChildComponent.vue will be rendered as:
-```ts
+```vue
 <div class="text-2xl text-amber-500">
 	Lorem ipsum dolor sit amet consectetur adipisicing elit
 </div>
@@ -52,7 +52,7 @@ app.mount("#app");
 ```
 
 Use the directive on your Vue components:
-```ts
+```vue
 <SomeComponent class="h-20 w-20 bg-red-500" v-tw-merge/>
 // or
 <SomeComponent class="h-20 w-20 bg-red-500" v-twMerge/>
