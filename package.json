@@ -1,0 +1,39 @@
+{
+	"name": "tailwind-merge-vue-directive",
+	"version": "1.0.0",
+	"description": "A Vue directive to automatically merge tailwind classes on custom components. This plugin builds on the awesome work done by the \"tailwind-merge\" package.",
+	"main": "index.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yakir-reznik/tailwind-merge-vue-directive.git"
+	},
+	"keywords": [
+		"tailwind",
+		"tailwind-merge",
+		"tw-merge",
+		"twMerge",
+		"vue",
+		"vue.js",
+		"tailwindcss",
+		"css",
+		"classes",
+		"className",
+		"classList",
+		"merge",
+		"conflict",
+		"override"
+	],
+	"author": "Yakir Reznik",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/yakir-reznik/tailwind-merge-vue-directive/issues"
+	},
+	"homepage": "https://github.com/yakir-reznik/tailwind-merge-vue-directive#readme",
+	"dependencies": {
+		"tailwind-merge": "^2.0.0",
+		"vue": "^3.0.0"
+	}
+}
