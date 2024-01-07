@@ -2,30 +2,34 @@ import { expect, test } from "vitest";
 import { config, mount } from "@vue/test-utils";
 import { directive } from "../src/entry";
 
-import ParentComponent from "./ParentComponent.vue";
+import TestComponent from "./TestComponent.vue";
 
 config.global.directives = {
 	twMerge: directive,
 };
 
-test("mount component", async () => {
-	expect(ParentComponent).toBeTruthy();
+const hard_coded_classes = "text-sm text-red-500 w-20 inline-block".split(" ");
 
-	const parentEl = mount(ParentComponent, {
+test("Mount without additonal classes", async () => {
+	const el = mount(TestComponent, {
 		props: {},
 	});
 
-	const childEl = parentEl.findComponent({ name: "ChildComponent" });
-	expect(childEl.classes()).toStrictEqual(["text-lg", "text-blue-500"]);
+	expect(el.classes()).toStrictEqual(hard_coded_classes);
+});
 
-	// expect(el.text()).toContain("4 x 2 = 8");
-	// expect(wrapper.html()).toMatchSnapshot();
+test("Mount with additonal static classes", async () => {
+	const el = mount(TestComponent, {
+		props: {},
+		attrs: {
+			class: "text-lg text-blue-500",
+		},
+	});
 
-	// await wrapper.get("button").trigger("click");
-
-	// expect(wrapper.text()).toContain("4 x 3 = 12");
-
-	// await wrapper.get("button").trigger("click");
-
-	// expect(wrapper.text()).toContain("4 x 4 = 16");
+	expect(el.classes()).toStrictEqual([
+		"w-20",
+		"inline-block",
+		"text-lg",
+		"text-blue-500",
+	]);
 });
