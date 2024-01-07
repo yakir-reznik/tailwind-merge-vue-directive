@@ -2,9 +2,11 @@
 	"name": "tailwind-merge-vue-directive",
 	"version": "1.0.0",
 	"description": "A Vue directive to automatically merge tailwind classes on custom components. This plugin builds on the awesome work done by the \"tailwind-merge\" package.",
-	"main": "index.ts",
+	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite build && vite preview"
 	},
 	"repository": {
 		"type": "git",
@@ -33,7 +35,15 @@
 	},
 	"homepage": "https://github.com/yakir-reznik/tailwind-merge-vue-directive#readme",
 	"dependencies": {
+		"@babel/types": "^7.23.6",
 		"tailwind-merge": "^2.0.0",
 		"vue": "^3.0.0"
+	},
+	"devDependencies": {
+		"@rollup/plugin-typescript": "^8.5.0",
+		"@types/node": "^20.10.6",
+		"tslib": "^2.4.0",
+		"typescript": "^5.3.3",
+		"vite": "^5.0.11"
 	}
 }

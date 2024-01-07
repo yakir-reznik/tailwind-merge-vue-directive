@@ -14,7 +14,7 @@
  *
  */
 
-import type { App } from "vue";
+import type { App, DirectiveBinding, VNode } from "vue";
 import { twMerge } from "tailwind-merge";
 
 export default {
@@ -26,13 +26,19 @@ export default {
 	},
 };
 
-type ComputeClasses = (el: HTMLElement) => void;
-const computeClasses: ComputeClasses = (el) => {
-	const classes = el.classList.value;
+type ComputeClasses = (
+	el: HTMLElement,
+	binding: DirectiveBinding,
+	vNode: VNode
+) => void;
+const computeClasses: ComputeClasses = (el, binding) => {
+	const exitingClasses = el.classList.value;
 
-	// No need to run twMerge if there are no classes
-	if (!classes) return;
+	console.log(binding.instance);
+
+	// const inheritedClasses = binding.instance?.ctx?.attrs;
+	const inheritedClasses = "";
 
 	// This works because all fallthrough classes are added at the end of the string
-	el.classList.value = twMerge(classes);
+	el.classList.value = twMerge(exitingClasses, inheritedClasses);
 };
