@@ -1,11 +1,12 @@
-// vite.config.ts
-import { defineConfig } from "vite";
+/// <reference types="vitest" />
 
+import { defineConfig } from "vite";
 import typescript from "@rollup/plugin-typescript";
 import path from "path";
+import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
-	plugins: [],
+	plugins: [vue()],
 	resolve: {
 		alias: [
 			{
@@ -30,5 +31,9 @@ export default defineConfig({
 			external: [],
 			plugins: [typescript],
 		},
+	},
+	test: {
+		globals: true,
+		environment: "jsdom",
 	},
 });

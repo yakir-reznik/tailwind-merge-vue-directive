@@ -1,5 +1,20 @@
-import type { DirectiveBinding, App } from "vue";
+import "./assets/base.css";
+
+import { createApp } from "vue";
+import App from "./App.vue";
+
+import type { App as VueApp, DirectiveBinding, VNode } from "vue";
 import { twMerge } from "tailwind-merge";
+// import p from "tailwind-merge-vue-directive";
+
+const plugin = {
+	install: (app: VueApp) => {
+		app.directive("twMerge", {
+			beforeMount: computeClasses,
+			updated: computeClasses,
+		});
+	},
+};
 
 type ComputeClasses = (
 	el: HTMLElement,
@@ -17,14 +32,7 @@ const computeClasses: ComputeClasses = (el, binding, vNode) => {
 	el.classList.value = twMerge(existingClasses, inheritedClasses);
 };
 
-export const directive = {
-	beforeMount: computeClasses,
-	updated: computeClasses,
-};
-
-// the actual plugin
-export default {
-	install: (app: App) => {
-		app.directive("twMerge", directive);
-	},
-};
+const app = createApp(App);
+app.use(plugin);
+// app.use(p);
+app.mount("#app");
