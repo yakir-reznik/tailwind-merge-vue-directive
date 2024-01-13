@@ -8,8 +8,8 @@ To achieve the tailwind class merging behavior this package uses [tailwind-merge
 ## Get started
 [What is this for?](#what-is-this-for)  
 [How to install](#how-to-install)  
+[How to use](#how-to-use)  
 [Example](#example)  
-[How to use](#how-to-use)
 
 
 ## How to install:
