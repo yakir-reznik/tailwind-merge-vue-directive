@@ -1,6 +1,6 @@
 {
 	"name": "tailwind-merge-vue-directive",
-	"version": "2.0.2",
+	"version": "2.0.3",
 	"description": "A Vue directive to automatically merge tailwind classes on custom components. This plugin builds on the awesome work done by the \"tailwind-merge\" package.",
 	"main": "index.js",
 	"scripts": {

@@ -3,6 +3,8 @@
 
 A Vue.js plugin that adds a "v-tw-merge" directive that you can use in your components to automatically merge tailwind classes that were passed from the parent with classes that exist on the component level (example below).
 
+If find this package helpful please consider [starring it on github](https://github.com/yakir-reznik/tailwind-merge-vue-directive), Thank you ❤️.
+
 To achieve the tailwind class merging behavior this package uses [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) under the hood.
 
 ## Get started
