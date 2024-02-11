@@ -34,8 +34,6 @@ type ComputeClasses = (
 const computeClasses: ComputeClasses = (el, binding) => {
 	const exitingClasses = el.classList.value;
 
-	console.log(binding.instance);
-
 	// const inheritedClasses = binding.instance?.ctx?.attrs;
 	const inheritedClasses = "";
 
