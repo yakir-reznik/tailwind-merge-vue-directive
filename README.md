@@ -3,9 +3,9 @@
 
 A Vue.js plugin that adds a "v-tw-merge" directive that you can use in your components to automatically merge tailwind classes that were passed from the parent with classes that exist on the component level (example below).
 
-If find this package helpful please consider [starring it on github](https://github.com/yakir-reznik/tailwind-merge-vue-directive), Thank you ❤️.
+If you find this package helpful please consider [starring it on github](https://github.com/yakir-reznik/tailwind-merge-vue-directive), Thank you ❤️.
 
-To achieve the tailwind class merging behavior this package uses [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) under the hood.
+To achieve the tailwind class merging behavior,  this package uses [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) under the hood.
 
 ## Get started
 [What is this for?](#what-is-this-for)  
@@ -99,7 +99,7 @@ For demonstration purposes let's assume we have this component:
 
 Now let's assume we want to use this `MyButton` component in our `App.vue`, but just this time we want the button to be blue instead of red.
 
-Seeminglty, the solution to this problem is quite obvjous.   
+Seeminglty, the solution to this problem is quite obvious.   
 We can just to pass a class attribute when using the component.
 
 ```vue
@@ -111,14 +111,15 @@ We can just to pass a class attribute when using the component.
 </template>
 ```
 
-Because of how Vue works, the `class` attribute that was defined on the component instance in `App.vue` will be appended to the existing `class` attribute in `MyButton.vue`.
+The `class` attribute that was defined on the component instance in `App.vue` will be appended to the existing `class` attribute in `MyButton.vue`.
 
 The final rendered HTML will look like this:
 ```vue
 <button class="bg-red-600 text-white px-6 py-2 rounded bg-blue-600">My blue button</button> 
 ```
 
-It is important to point out that the order of the classes in the `class` attribute does not matter at all.  
+It is important to point out that the order of the classes in the `class` attribute does not matter at all.
+
 CSS rules are applied by specificity, when two selectors have the same specificity score the selector that was declared last "wins".  
 You can read more about how the CSS Cascade works [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade).
 
